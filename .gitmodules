@@ -1,0 +1,4 @@
+[submodule "public"]
+	path = public
+	url = git@github.com:leidsondias/leidsondias.github.io.git
+	branch = master

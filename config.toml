@@ -1,0 +1,39 @@
+baseURL = "https://leidson.com/"
+languageCode = "en-us"
+title = "Leidson Cruz"
+theme = "hugo-nuo"
+enableRobotsTXT = true
+canonifyurls = true
+
+# menu
+[[menu.main]]
+  name = "Home"
+  weight = 10
+  identifier = "home"
+  url = "/"
+
+[[menu.main]]
+  name = "Posts"
+  weight = 10
+  identifier = "post"
+  url = "/post"
+
+[[menu.main]]
+  name = "Tags"
+  weight = 30
+  identifier = "tags"
+  url = "/tags/"
+
+
+[params]
+author = "Leidson Cruz"
+avatar = "images/avatar.jpg"
+seotitle = "Leidson Cruz | Software Engineer"
+subtitle = "~ Software Engineer ~"
+description = "Leidson Cruz i'am a Software Engineer living at Lison. Born at João Pessoa - Paraíba, like React, Python, Javascript, Node etc."
+
+# social networks
+email = "leidson89@gmail.com"
+github = "leidsondias"
+linkedin = "leidsondias"
+medium = "leidsoncruz"
