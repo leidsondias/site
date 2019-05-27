@@ -5,18 +5,16 @@ theme = "hugo-nuo"
 enableRobotsTXT = true
 canonifyurls = true
 
-# menu
-[[menu.main]]
-  name = "Home"
-  weight = 10
-  identifier = "home"
-  url = "/"
+# Google Analytics UA number
+googleAnalytics = "UA-140735682-1"
 
+
+# menu
 [[menu.main]]
   name = "Posts"
   weight = 10
   identifier = "post"
-  url = "/post"
+  url = "/post/"
 
 [[menu.main]]
   name = "Tags"
