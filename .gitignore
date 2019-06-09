@@ -1,2 +1,5 @@
 public/
 resources/
+.idea/
+*.pyc
+.env
