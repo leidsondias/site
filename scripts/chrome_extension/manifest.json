@@ -1,0 +1,28 @@
+{
+	"manifest_version": 2,
+	"name": "Transform Medium to Markdown",
+	"description": "Extension with responsibility for always I publish any article on Medium, It run command to transform to Markdown and publish on my Site!",
+	"version": "0.0.1",
+	"background": {
+		"scripts": ["js/background.js"],
+		"persistent": false
+	},
+	"key": "fofdkdobppilpbcopolmiclfpfafgbig",
+	"browser_action": {},
+	"content_scripts": [{
+		"run_at": "document_idle",
+		"matches": ["*://medium.com/*"],
+		"js": ["js/content.js"]
+	}],
+	"content_security_policy": "script-src 'self' https://www.google-analytics.com; object-src 'self'",
+	"permissions": ["clipboardWrite", "activeTab"],
+	"commands": {
+		"generate-python-command": {
+			"suggested_key": {
+				"default": "Ctrl+Shift+Y",
+				"mac": "Command+Shift+Y"
+			},
+			"description": "Generate the Python command for transform the active Medium Post to Markdown"
+		}
+	}
+}

@@ -4,3 +4,4 @@ resources/
 *.pyc
 .env
 content/
+.DS_Store
