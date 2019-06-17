@@ -9,6 +9,7 @@ If you use [hugo](http://gohugo.io), you can pass argument `--hugo` and create t
 ```
 python main {url}
   --hugo - create post for Hugo framework <https://gohugo.io/>
+  -d, --debug - shows all errors when process the paragraphs and markups
 ```
 
 ### Hugo

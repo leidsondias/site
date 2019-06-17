@@ -9,6 +9,7 @@ import post
 parser = argparse.ArgumentParser("url")
 parser.add_argument("url", help="The medium url post.", type=str)
 parser.add_argument("--hugo", help="Create post for Hugo framework <https://gohugo.io/>", action="store_true")
+parser.add_argument("--debug", "-d", help="Print the unknown formats when process the paragraphs and markups", action="store_true")
 url = parser.parse_args().url
 
 post_content = post.process_post(url)
@@ -28,3 +29,6 @@ if parser.parse_args().hugo:
 else:
     print(post_content.get('full_text'))
 
+if parser.parse_args().debug:
+    print('\n\n----------------\n\n','DEBUG CONSOLE','\n\n----------------\n\n',
+            '\n'.join(post_content.get('unknown_types')))

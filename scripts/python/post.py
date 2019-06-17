@@ -12,7 +12,7 @@ class AnchorType(Enum):
 
 
 MEDIUM_CDN = 'https://cdn-images-1.medium.com/max/'
-
+UNKNOWN_TYPES = []
 
 def transform_to_json(text):
     return json.loads(text[text.find("{"):])
@@ -117,7 +117,7 @@ def get_markup(markup, text, mentioned_users=[]):
     elif markup_type == 10:
         text = '{}`{}`{}'.format(text[:start], text[start:end], text[end:])
     else:
-        print('Unknown markup format: {} for {} text'. format(markup_type, text))
+        UNKNOWN_TYPES.append('Unknown markup format: {} for {} text'. format(markup_type, text))
 
     return text
 
@@ -170,7 +170,7 @@ def format_paragraph_by_type(paragraph, mentioned_users=[]):
         markdown = get_embed_media(media_resource_id)
         text = '*{}*'.format(text.strip()) if text else ''
     else:
-        print('Unknown paragraph format: {} for {} text'. format(paragraph_type, text))
+        UNKNOWN_TYPES.append('Unknown paragraph format: {} for {} text'. format(paragraph_type, text))
 
     return '\n{}{}\n'.format(markdown, text)
 
@@ -206,4 +206,5 @@ def process_post(url):
         'slug': get_post_slug(values),
         'tags': get_post_tags(values.get('virtuals')),
         'title': get_post_title(values),
+        'unknown_types': UNKNOWN_TYPES or ['All markups and paragraphs was process with success']
     }
