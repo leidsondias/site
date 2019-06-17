@@ -106,6 +106,9 @@ def get_markup(markup, text, mentioned_users=[]):
     start = markup.get('start')
     end = markup.get('end')
 
+    if text[start:end] == ' ':
+        return text
+
     if markup_type == 1:
         text = '{}**{}**{}'.format(text[:start], text[start:end], text[end:])
     elif markup_type == 2:
@@ -140,7 +143,7 @@ def format_paragraph_by_type(paragraph, mentioned_users=[]):
     paragraph_type = paragraph.get('type')
     text = add_markups_into_paragraph(paragraph, mentioned_users)
 
-    markdown = None
+    markdown = ''
     if paragraph_type == 1:
         markdown = ''
     elif paragraph_type == 2:
@@ -169,6 +172,9 @@ def format_paragraph_by_type(paragraph, mentioned_users=[]):
         media_resource_id = paragraph.get('iframe').get('mediaResourceId')
         markdown = get_embed_media(media_resource_id)
         text = '*{}*'.format(text.strip()) if text else ''
+    elif paragraph_type == 13:
+        markdown = '### '
+        text = re.sub(r'\n', '###', text)
     else:
         UNKNOWN_TYPES.append('Unknown paragraph format: {} for {} text'. format(paragraph_type, text))
 
