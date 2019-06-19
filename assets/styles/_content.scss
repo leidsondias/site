@@ -1,0 +1,9 @@
+.post-content {
+  & pre {
+    background: $code-background;
+    
+    & code {
+      background: $code-background;
+    }
+  }
+}

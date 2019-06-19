@@ -29,6 +29,7 @@ avatar = "images/avatar.jpg"
 seotitle = "Leidson Cruz | Software Engineer"
 subtitle = "~ Software Engineer ~"
 description = "Leidson Cruz i'am a Software Engineer living at Lison. Born at João Pessoa - Paraíba, like React, Python, Javascript, Node etc."
+customStyle = "styles/custom.scss"
 
 # social networks
 email = "leidson89@gmail.com"
