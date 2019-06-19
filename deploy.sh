@@ -17,8 +17,21 @@ if [ $# -eq 1 ]
 fi
 git commit -m "$msg"
 
+
+while [[ "$#" -gt 0 ]]; do case $1 in
+  -f|--force)   force=1
+                ;;
+  *) echo "Unknown parameter passed: $1"; exit 1;;
+esac; shift; done
+
 # Push source and build repos.
-git push origin master
+
+if [ "$force" = "1" ]; then
+	git push origin master -f
+else
+	git push origin master
+fi
+
 
 # Come Back up to the Project Root
 cd ..
