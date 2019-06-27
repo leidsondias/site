@@ -3,5 +3,5 @@ resources/
 .idea/
 *.pyc
 .env
-content/
 .DS_Store
+themes/
