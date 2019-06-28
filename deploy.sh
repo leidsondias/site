@@ -12,20 +12,19 @@ git add .
 
 # Commit changes.
 msg="rebuilding site `date`"
-if [ $# -eq 1 ]
-  then msg="$1"
-fi
-git commit -m "$msg"
-
 
 while [[ "$#" -gt 0 ]]; do case $1 in
   -f|--force)   force=1
                 ;;
-  *) echo "Unknown parameter passed: $1"; exit 1;;
-esac; shift; done
+  *)
+    msg="$1"
+esac;
+shift;
+done
+
 
 # Push source and build repos.
-
+git commit -m "$msg"
 if [ "$force" = "1" ]; then
 	git push origin master -f
 else
