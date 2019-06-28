@@ -101,7 +101,7 @@ One resolution for this problem is saving the number of char on the aux variable
 
 Another solution is to use aux variable to stop and concatenate the strings. And merge with the rest of the text.
 
-So I talked with my both friends from my company ([Fábio Matias](https://medium.com/@fabiomatias) and Daniel Magro). Both given to me good ideas to add the markups. I merged the ideas to make the below solution.
+So I talked with my both friends from my company ([Fábio Matias](https://medium.com/@fabiomatias21) and [Daniel Magro](https://medium.com/@dmagro04)). Both given to me good ideas to add the markups. I merged the ideas to make the below solution.
 
 First, I sort the array of paragraphs with the keys: **start** and **type**.
 
